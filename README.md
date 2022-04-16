@@ -19,4 +19,29 @@ pulumi config set --path 'vpc:tags[0]' 'costcenter:platform'
 pulumi config set --path 'vpc:tags[1]' 'env:dev' # matches stack name
 ```
 
+As long as your AWS credentials are setup and working.
 
+`pulumi preview --diff` should return something that looks like:
+
+```bash
+~/code/myInfra ᐅ pulumi preview --diff
+Previewing update (dev)
+
+View Live: https://app.pulumi.com/undeadops/myInfra/dev/previews/10742796-7cc6-405d-913e-d8aa2ac9ec86
+
++ pulumi:pulumi:Stack: (create)
+    [urn=urn:pulumi:dev::myInfra::pulumi:pulumi:Stack::myInfra-dev]
+    + aws:ec2/vpc:Vpc: (create)
+        [urn=urn:pulumi:dev::myInfra::aws:ec2/vpc:Vpc::dev]
+        cidrBlock         : "10.20.0.0/16"
+        enableDnsHostnames: true
+        enableDnsSupport  : true
+        instanceTenancy   : "default"
+        tags              : {
+            Name      : "dev"
+            costcenter: "platform"
+            env       : "dev"
+        }
+Resources:
+    + 2 to create
+```
