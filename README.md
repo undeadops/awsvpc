@@ -27,7 +27,7 @@ As long as your AWS credentials are setup and working.
 ~/code/myInfra ᐅ pulumi preview --diff
 Previewing update (dev)
 
-View Live: https://app.pulumi.com/undeadops/myInfra/dev/previews/10742796-7cc6-405d-913e-d8aa2ac9ec86
+View Live: https://app.pulumi.com/undeadops/myInfra/dev/previews/
 
 + pulumi:pulumi:Stack: (create)
     [urn=urn:pulumi:dev::myInfra::pulumi:pulumi:Stack::myInfra-dev]
